@@ -7,7 +7,7 @@ This example was originally made by my fellow computer science lecturer Lars Mor
 It consists of a simple Java Spring backend and a browser-based frontend (HTML, CSS and JavaScript) page.
 
 ### Backend
-There are 3 different featues (controllers)
+There are 3 different features (controllers)
 - [JokeController.java](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/api/JokeController.java)
 - [JokeLimitedController.java](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/api/JokeLimitedController.java)
 - [OwnInfoController.java](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/api/OwnInfoController.java)
