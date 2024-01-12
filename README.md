@@ -1,6 +1,7 @@
 ## ChatGPT Jokes Example
 
 This example shows how to use the ChatGPT API.
+
 This example was originally made by my fellow computer science lecturer Lars Mortensen (retired), som the Copenhagen School of Design & Technology.
 
 It consist of a simple Java Spring backend and front end page.
