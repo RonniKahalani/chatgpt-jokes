@@ -1,19 +1,23 @@
 const SERVER_URL = 'http://localhost:8080/api/';
 
-document.getElementById('btn-get-joke').addEventListener('click', getJoke);
-document.getElementById('btn-get-joke2').addEventListener('click', getJokeWithRateLimit);
-document.getElementById('btn-get-answer').addEventListener('click', getInfo);
 
-async function getJoke() {
+document.getElementById('form-joke').addEventListener('submit', getJoke);
+document.getElementById('form-joke2').addEventListener('submit', getJokeWithRateLimit);
+document.getElementById('form-answer').addEventListener('submit', getInfo);
+
+async function getJoke(event) {
+  // Prevent the form from reloading the page.
+  event.preventDefault();
+
   const URL = `${SERVER_URL}joke?about= + ${document.getElementById('about').value}`
   const spinner = document.getElementById('spinner1');
   const result = document.getElementById('result');
   result.style.color = "black";
+
   try {
     spinner.style.display = "block";
     const response = await fetch(URL).then(handleHttpErrors)
     document.getElementById('result').innerText = response.answer;
-    //document.getElementById('about').value = ''
   } catch (e) {
     result.style.color = "red";
     result.innerText = e.message;
@@ -23,7 +27,10 @@ async function getJoke() {
   }
 }
 
-async function getJokeWithRateLimit() {
+async function getJokeWithRateLimit(event) {
+  // Prevent the form from reloading the page.
+  event.preventDefault();
+
   const URL = `${SERVER_URL}joke2/limited?about= + ${document.getElementById('about2').value}`
   const result2 = document.getElementById('result2');
   const spinner2 = document.getElementById('spinner2');
@@ -41,7 +48,10 @@ async function getJokeWithRateLimit() {
   }
 }
 
-async function getInfo() {
+async function getInfo(event) {
+  // Prevent the form from reloading the page.
+  event.preventDefault();
+
   const URL = `${SERVER_URL}owninfo?question= + ${document.getElementById('the-question').value}`
   const spinner = document.getElementById('spinner3');
   const result3 = document.getElementById('result3');
