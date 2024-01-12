@@ -6,6 +6,7 @@ import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.Refill;
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -22,9 +23,14 @@ import java.util.concurrent.ConcurrentHashMap;
 @CrossOrigin(origins = "*")
 public class JokeLimitedController {
 
-  private final int BUCKET_CAPACITY = 3;
-  private final int REFILL_AMOUNT = 3;
-  private final int REFILL_TIME = 2;
+  @Value("${app.bucket_capacity}")
+  private int BUCKET_CAPACITY;
+
+  @Value("${app.refill_amount}")
+  private int REFILL_AMOUNT;
+
+  @Value("${app.refill_time}")
+  private int REFILL_TIME;
 
   private OpenAiService service;
 
