@@ -31,7 +31,7 @@ async function getJokeWithRateLimit(event) {
   // Prevent the form from reloading the page.
   event.preventDefault();
 
-  const URL = `${SERVER_URL}joke2/limited?about= + ${document.getElementById('about2').value}`
+  const URL = `${SERVER_URL}jokelimited?about= + ${document.getElementById('about2').value}`
   const result2 = document.getElementById('result2');
   const spinner2 = document.getElementById('spinner2');
   result2.style.color = "black";

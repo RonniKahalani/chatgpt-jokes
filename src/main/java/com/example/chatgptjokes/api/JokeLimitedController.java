@@ -1,6 +1,5 @@
 package com.example.chatgptjokes.api;
 
-
 import com.example.chatgptjokes.dtos.MyResponse;
 import com.example.chatgptjokes.service.OpenAiService;
 import io.github.bucket4j.Bandwidth;
@@ -15,10 +14,13 @@ import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
+/**
+ * This class handles fetching a joke via the ChatGPT API, but is IP-rate limited.
+ */
 @RestController
-@RequestMapping("/api/joke2")
+@RequestMapping("/api/jokelimited")
 @CrossOrigin(origins = "*")
-public class JokeControllerLimited {
+public class JokeLimitedController {
 
   private final int BUCKET_CAPACITY = 3;
   private final int REFILL_AMOUNT = 3;
@@ -28,27 +30,51 @@ public class JokeControllerLimited {
 
   private final Map<String, Bucket> buckets = new ConcurrentHashMap<>();
 
-  public JokeControllerLimited(OpenAiService service) {
+  /**
+   * The controller called from the browser client.
+   * @param service
+   */
+  public JokeLimitedController(OpenAiService service) {
     this.service=service;
   }
 
+  /**
+   * Creates the bucket for handling IP-rate limitations.
+   * @return bucket
+   */
   private Bucket createNewBucket() {
     Bandwidth limit = Bandwidth.classic(BUCKET_CAPACITY, Refill.greedy(REFILL_AMOUNT, Duration.ofMinutes(REFILL_TIME)));
     return Bucket.builder().addLimit(limit).build();
   }
 
+  /**
+   * Returns an existing bucket via ket or creates a new one.
+   * @param key the IP address
+   * @return bucket
+   */
   private Bucket getBucket(String key) {
     return buckets.computeIfAbsent(key, k -> createNewBucket());
   }
 
-  @GetMapping("/limited")
+  /**
+   * Handles the request from the browser.
+   * @param about about contains the input that ChatGPT uses to make a joke about.
+   * @param request the current HTTP request used
+   * @return the response from ChatGPT.
+   */
+  @GetMapping()
   public MyResponse getJokeLimited(@RequestParam String about, HttpServletRequest request) {
+
+    // Get the IP of the client.
     String ip = request.getRemoteAddr();
+    // Get or create the bucket for the given IP/key.
     Bucket bucket = getBucket(ip);
+    // Does the request adhere to the IP-rate  limitations?
     if (!bucket.tryConsume(1)) {
+      // If not, tell the client "Too many requests".
       throw new ResponseStatusException(HttpStatus.TOO_MANY_REQUESTS, "Too many requests, try again later");
     }
+    // Otherwise request a joke and return the response.
     return service.makeRequest(about, JokeController.SYSTEM_MESSAGE);
   }
 }
-
