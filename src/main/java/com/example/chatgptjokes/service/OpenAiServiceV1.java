@@ -25,18 +25,30 @@ Observe the other version provides better error handling. Add this if you want t
 @Service
 public class OpenAiServiceV1 {
 
+
   @Value("${app.api-key}")
   private String API_KEY;
 
   //See here for a decent explanation of the parameters send to the API via the requestBody
   //https://platform.openai.com/docs/api-reference/completions/create
 
-  public final static String URL = "https://api.openai.com/v1/chat/completions";
-  public final static String MODEL = "gpt-3.5-turbo";
-  public final static double TEMPERATURE = 0.8;
-  public final static int MAX_TOKENS = 300;
-  public final static double FREQUENCY_PENALTY = 0.2;
-  public final static double PRESENCE_PENALTY = 0;
+  @Value("${app.url}")
+  public String URL;
+
+  @Value("${app.model}")
+  public String MODEL;
+
+  @Value("${app.temperature}")
+  public double TEMPERATURE;
+
+  @Value("${app.max_tokens}")
+  public int MAX_TOKENS;
+
+  @Value("${app.frequency_penalty}")
+  public double FREQUENCY_PENALTY;
+
+  @Value("${app.presence_penalty}")
+  public double PRESENCE_PENALTY;
 
   public MyResponse makeRequest(String userPrompt, String _systemMessage) {
     WebClient client = WebClient.create();
