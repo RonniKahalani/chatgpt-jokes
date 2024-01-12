@@ -12,6 +12,11 @@ There are 3 different featues (controllers)
 - [JokeControllerLimited.java](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/api/JokeControllerLimited.java)
 - [OwnInfoController.java](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/api/OwnInfoController.java)
 
+### Services
+- [OpenAiService](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/service/OpenAiService.java)
+- [OpenAiServiceV1](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/java/com/example/chatgptjokes/service/OpenAiServiceV1.java)
+
+
 ### Frontend
 - [index.html](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/resources/static/index.html)
 - [main.css](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/resources/static/css/main.css)
