@@ -11,6 +11,7 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/main.js"></script>
 </head>
 
 <body>
@@ -24,8 +25,14 @@
         <li>Same example as above, but with IP-rate limiting.</li>
         <li>An example on how to feed your own info into the API-request.</li>
     </ol>
-
-
+    <br>
+    <div class="row">
+        <div class="column text-center">
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#infoModal">
+            Important read!
+        </button>
+        </div>
+    </div>
     <div class="container">
 
         <div class="card m-3">
@@ -87,18 +94,20 @@
                 <h5 class="card-title">Demonstrates how to feed own info into the API-request</h5>
 
                 <form id="form-answer">
-                    <div>
+                    <div class="row">
+                    <div class="column mb-3">
 
-                        <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-dark btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#owninfoModal">
                             How to use this example!
                         </button>
+                    </div>
                     </div>
                     <div class="container">
 
                         <div class="row">
           <textarea cols="100" rows="3" id="the-question"
-                    placeholder="Enter a question related to this semester"></textarea>
+                    placeholder="Enter a question related to this ChatGPT example"></textarea>
                         </div>
 
                         <div class="row">
@@ -129,15 +138,15 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <br/>
-                    This page is hosted by Tomcat, which also hosts the backend — a setup that is definitely not
-                    recommended
-                    for your app designs this semester,
-                    and <b>especially not for the exam</b>.
+                    This example is hosted as a single web app, which is definitely not
+                    recommended for a professional solution.<br/>
+                    Instead a real solution should be split in a distributed way, with<br>
+                    - a frontend app (in a separate repository) and<br/>
+                    - a backend app (in a separate repository).
                     <br/>
                     <br/>
                     For everything but simple demo's like this, your backend and frontend should be hosted on separate
-                    servers
+                    servers.
                     <br/>
                     <br/>
                     Here, this arrangement is employed to provide a simple example that includes both the API and hints
@@ -159,12 +168,10 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">How to use example 3</h1>
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">How to use this example (own info)</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <br/>
-
                     This example shows it is possible, via this prompt, to reply with personal
                     information, which the AI model has not been trained with.
                     <br/>
@@ -184,8 +191,7 @@
             </div>
         </div>
     </div>
-
-    <script src="./javascript.js"></script>
+</div>
 </body>
 
 </html>
