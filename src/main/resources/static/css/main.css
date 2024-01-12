@@ -3,3 +3,7 @@
     font-style: italic;
     color: darkblue;
 }
+
+label {
+    font-weight: bold;
+}
