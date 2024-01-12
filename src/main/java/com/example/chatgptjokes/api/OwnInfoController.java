@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
  * This class handles self made replies that the ChatGPT AI has not been trained with.
  */
 @RestController
-@RequestMapping("/api/owninfo")
+@RequestMapping("/api/v1/owninfo")
 @CrossOrigin(origins = "*")
 public class OwnInfoController {
 

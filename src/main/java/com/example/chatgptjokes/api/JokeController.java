@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
  * This class handles fetching a joke via the ChatGPT API
  */
 @RestController
-@RequestMapping("/api/joke")
+@RequestMapping("/api/v1/joke")
 @CrossOrigin(origins = "*")
 public class JokeController {
 

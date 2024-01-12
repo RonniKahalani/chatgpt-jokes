@@ -1,4 +1,4 @@
-const SERVER_URL = 'http://localhost:8080/api/';
+const SERVER_URL = 'http://localhost:8080/api/v1';
 
 
 document.getElementById('form-joke').addEventListener('submit', getJoke);

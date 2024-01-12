@@ -18,7 +18,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * This class handles fetching a joke via the ChatGPT API, but is IP-rate limited.
  */
 @RestController
-@RequestMapping("/api/jokelimited")
+@RequestMapping("/api/v1/jokelimited")
 @CrossOrigin(origins = "*")
 public class JokeLimitedController {
 
