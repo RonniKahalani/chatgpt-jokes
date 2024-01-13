@@ -1,9 +1,10 @@
 # ChatGPT Jokes Example
 
-This example shows how to use the ChatGPT API to make jokes based on the users input.
+Shows how to use the ChatGPT API to make jokes based on the users input.
+
 ![Image](/doc/openai-jokes.jpg)
 
-The project was originally made by my fellow computer science lecturer Lars Mortensen (retired), from the Copenhagen School of Design & Technology.
+This project was originally made by my fellow computer science lecturer Lars Mortensen (retired), from the Copenhagen School of Design & Technology.
 
 It consists of a simple Java Spring backend and a browser-based frontend (HTML, CSS and JavaScript) page.
 
