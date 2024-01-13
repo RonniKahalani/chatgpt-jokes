@@ -1,6 +1,7 @@
 # ChatGPT Jokes Example
 
-This example shows how to use the ChatGPT API.
+This example shows how to use the ChatGPT API to make jokes based on the users input.
+![Image](/doc/openai-jokes.jpg)
 
 The project was originally made by my fellow computer science lecturer Lars Mortensen (retired), from the Copenhagen School of Design & Technology.
 
@@ -30,3 +31,8 @@ Shows how to make custom responses that the ChatGPT AI has not been trained in.
 - [index.html](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/resources/static/index.html)
 - [main.css](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/resources/static/css/main.css)
 - [main.js](https://github.com/RonniKahalani/chatgpt-jokes/blob/master/src/main/resources/static/js/main.js)
+
+## Adding an API key
+You have to create a OpenAI account with credits and an API key to run this example successfully.
+![Image](/doc/chatgpt-jokes-apikey.jpg)
+
