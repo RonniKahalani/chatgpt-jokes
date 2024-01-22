@@ -35,5 +35,6 @@ Shows how to make custom responses that the ChatGPT AI has not been trained in.
 
 ## Adding an API key
 You have to create a OpenAI account with credits and an API key to run this example successfully.
+
 ![Image](/doc/chatgpt-jokes-apikey.jpg)
 
