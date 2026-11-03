@@ -17,7 +17,7 @@ public class ChatCompletionRequest {
   private String model;
   private List<Message> messages = new ArrayList<>();
   private double temperature;
-  private int max_tokens;
+  private int max_completion_tokens;
   private double top_p;
   private double frequency_penalty;
   private double presence_penalty;

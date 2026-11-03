@@ -41,7 +41,7 @@ public class OpenAiServiceV1 {
   @Value("${app.temperature}")
   public double TEMPERATURE;
 
-  @Value("${app.max_tokens}")
+  @Value("${app.max_completion_tokens}")
   public int MAX_TOKENS;
 
   @Value("${app.frequency_penalty}")

@@ -2,6 +2,7 @@ package com.example.chatgptjokes.api;
 
 import com.example.chatgptjokes.dtos.MyResponse;
 import com.example.chatgptjokes.service.OpenAiService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 /**

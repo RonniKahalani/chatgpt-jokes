@@ -47,7 +47,7 @@ public class OpenAiService {
   @Value("${app.temperature}")
   public double TEMPERATURE;
 
-  @Value("${app.max_tokens}")
+  @Value("${app.max_completion_tokens}")
   public int MAX_TOKENS;
 
   @Value("${app.frequency_penalty}")
@@ -74,7 +74,7 @@ public class OpenAiService {
     ChatCompletionRequest requestDto = new ChatCompletionRequest();
     requestDto.setModel(MODEL);
     requestDto.setTemperature(TEMPERATURE);
-    requestDto.setMax_tokens(MAX_TOKENS);
+    requestDto.setMax_completion_tokens(MAX_TOKENS);
     requestDto.setTop_p(TOP_P);
     requestDto.setFrequency_penalty(FREQUENCY_PENALTY);
     requestDto.setPresence_penalty(PRESENCE_PENALTY);
